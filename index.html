@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091f">
+<title>A Little Universe for Sabrina ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --pink: #ff80bf;
+  --purple: #bb9cff;
+  --bg: #10091f;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #fff4ff;
+  background:
+    radial-gradient(ellipse at 50% 0%, #42205f 0%, transparent 55%),
+    linear-gradient(160deg, #10091f, #1b1031 65%, #090817);
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+#sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: var(--pink);
+  opacity: 0;
+  animation: float-up linear forwards;
+}
+
+@keyframes twinkle {
+  from { opacity: .2; }
+  to { opacity: 1; box-shadow: 0 0 9px white; }
+}
+
+@keyframes float-up {
+  10% { opacity: .65; }
+  100% { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 32px, 650px);
+  margin: auto;
+  padding: 55px 0 70px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .7rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 4.6rem);
+  line-height: 1.08;
+  margin: 18px 0;
+  letter-spacing: -2px;
+  background: linear-gradient(120deg, #fff, #ff9dce, #c4a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 { color: #ffc0e1; }
+
+p {
+  color: #d8cce9;
+  line-height: 1.8;
+}
+
+.moon {
+  margin: 35px auto 25px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, #e5caff 45%, #aa7ce7);
+  box-shadow: 0 0 35px #d5a5ff80, 0 0 100px #a25bff30;
+  animation: moon-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes moon-glow {
+  to { box-shadow: 0 0 55px #e9c4ff, 0 0 130px #a25bff50; }
+}
+
+button {
+  color: white;
+  border: 1px solid #ffffff35;
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #ffffff0c;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #ffffff18;
+  box-shadow: 0 0 22px #d98aff35;
+}
+
+.primary {
+  background: linear-gradient(110deg, #d44b9a, #8756d9);
+  border: 0;
+  box-shadow: 0 5px 25px #c34bbd30;
+}
+
+.panel {
+  margin: 35px 0;
+  padding: 25px 18px;
+  border: 1px solid #e9c7ff25;
+  border-radius: 24px;
+  background: #ffffff08;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 50px #00000015;
+}
+
+.hidden { display: none !important; }
+
+.note {
+  padding: 22px 16px;
+  border-radius: 18px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #ff80bf15, #a78bfa15);
+  border: 1px solid #ffb9e830;
+  animation: appear .5s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.small { font-size: .85rem; color: #aa9bbf; }
+
+footer {
+  padding-top: 25px;
+  color: #b6a4ce;
+  font-size: .85rem;
+}
+</style>
+</head>
+
+<body>
+<div id="sky" aria-hidden="true"></div>
+
+<main>
+  <div class="eyebrow">A little something made with love</div>
+
+  <div class="moon" aria-hidden="true"></div>
+
+  <h1>Welcome to<br>your universe, Sabrina ♡</h1>
+
+  <p>
+    Out of all the people in this enormous universe,
+    there's one person I would always choose to find.
+    That's you.
+  </p>
+
+  <button class="primary" onclick="enterWorld()">
+    Enter our little world ✨
+  </button>
+
+  <section id="world" class="hidden">
+    <div class="panel">
+      <div class="eyebrow">A message for you</div>
+      <h2>Hey, my girl ❤️</h2>
+      <p>
+        I wanted to make something that's just for you.
+        Something you can open whenever you want a little
+        reminder that you're loved.
+      </p>
+      <p>
+        This isn't just a website. It's a tiny piece of
+        my heart, turned into a place you can visit.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Little doors to my heart 💌</h2>
+      <p>Pick a door, baby. There's something behind each one.</p>
+
+      <button onclick="openNote('miss')">When you miss me 🌙</button>
+      <button onclick="openNote('sad')">When it's a hard day 🫂</button>
+      <button onclick="openNote('love')">A little reminder 💗</button>
+
+      <div id="note" class="note hidden" aria-live="polite"></div>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">One of my favourite things</div>
+      <h2>Our little moments ☁️</h2>
+      <p>
+        Sometimes it's not about doing something huge.
+        It's the little moments, the random conversations,
+        the laughter, and the comfort of knowing you're there.
+      </p>
+      <p>
+        Even an ordinary day feels different when I get
+        to share a little piece of it with you.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Three little promises ✨</h2>
+      <p>♡ I'll keep making an effort to show you that you matter.</p>
+      <p>♡ I'll keep finding little ways to make you smile.</p>
+      <p>♡ I'll keep looking forward to the memories we haven't made yet.</p>
+    </div>
+
+    <div class="panel">
+      <h2>There's one more thing...</h2>
+      <p>You've found your way through our little universe.</p>
+      <button class="primary" onclick="unlockSecret()">
+        Open your final surprise 🔐
+      </button>
+      <div id="secret" class="note hidden" aria-live="polite"></div>
+    </div>
+
+    <footer>
+      Made for Sabrina, with love ♡<br>
+      <span class="small">In a universe this big, I'm glad it's you.</span>
+    </footer>
+  </section>
+</main>
+
+<script>
+const sky = document.getElementById("sky");
+
+// Create a field of stars.
+for (let i = 0; i < 90; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.animationDelay = Math.random() * 4 + "s";
+  star.style.animationDuration = (2 + Math.random() * 4) + "s";
+  sky.appendChild(star);
+}
+
+// Send little hearts floating across the screen.
+function makeHeart() {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["♡", "♥️", "✧", "❤️"][Math.floor(Math.random() * 4)];
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.fontSize = (14 + Math.random() * 22) + "px";
+  heart.style.animationDuration = (7 + Math.random() * 7) + "s";
+  sky.appendChild(heart);
+  setTimeout(() => heart.remove(), 15000);
+}
+
+setInterval(makeHeart, 650);
+
+function enterWorld() {
+  const world = document.getElementById("world");
+  world.classList.remove("hidden");
+  world.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+const notes = {
+  miss: "If you're missing me right now, imagine me giving you the biggest hug. Distance can't erase the little moments we've shared or the ones we still have waiting for us. ❤️",
+  sad: "You don't have to have everything figured out today. Take a breath, be kind to yourself, and remember that a difficult day doesn't define you. You deserve gentleness, too. 🫂",
+  love: "Just in case nobody has told you today: you matter. Your smile, your heart, your little quirks, and the person you are mean more to me than one website could ever explain. 💗"
+};
+
+function openNote(type) {
+  const note = document.getElementById("note");
+  note.textContent = notes[type];
+  note.classList.remove("hidden");
+}
+
+function unlockSecret() {
+  const secret = document.getElementById("secret");
+  secret.innerHTML = `
+    <h2>My favourite person. ♡</h2>
+    <p>
+      If I could give you one thing, it would be the ability
+      to see yourself through my eyes, even for a moment.
+    </p>
+    <p>
+      Maybe then you'd understand why you mean so much to me.
+      Thank you for being you, Sabrina.
+    </p>
+    <p style="font-size:1.4rem">I choose you. Always. ❤️</p>
+  `;
+  secret.classList.remove("hidden");
+  secret.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+</script>
+</body>
+</html>
