@@ -4,15 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10091f">
+<meta name="description" content="A little universe made with love for Sabrina.">
 <title>A Little Universe for Sabrina ♡</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --pink: #ff80bf;
   --purple: #bb9cff;
   --bg: #10091f;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -52,13 +59,23 @@ body {
 }
 
 @keyframes twinkle {
-  from { opacity: .2; }
-  to { opacity: 1; box-shadow: 0 0 9px white; }
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 9px white;
+  }
 }
 
 @keyframes float-up {
-  10% { opacity: .65; }
-  100% { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
+  10% {
+    opacity: .65;
+  }
+  100% {
+    transform: translateY(-115vh) rotate(25deg);
+    opacity: 0;
+  }
 }
 
 main {
@@ -82,13 +99,20 @@ h1 {
   line-height: 1.08;
   margin: 18px 0;
   letter-spacing: -2px;
-  background: linear-gradient(120deg, #fff, #ff9dce, #c4a8ff);
+  background: linear-gradient(
+    120deg,
+    #fff,
+    #ff9dce,
+    #c4a8ff
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-h2 { color: #ffc0e1; }
+h2 {
+  color: #ffc0e1;
+}
 
 p {
   color: #d8cce9;
@@ -100,13 +124,24 @@ p {
   width: 115px;
   height: 115px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff, #e5caff 45%, #aa7ce7);
-  box-shadow: 0 0 35px #d5a5ff80, 0 0 100px #a25bff30;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #fff,
+    #e5caff 45%,
+    #aa7ce7
+  );
+  box-shadow:
+    0 0 35px #d5a5ff80,
+    0 0 100px #a25bff30;
   animation: moon-glow 4s ease-in-out infinite alternate;
 }
 
 @keyframes moon-glow {
-  to { box-shadow: 0 0 55px #e9c4ff, 0 0 130px #a25bff50; }
+  to {
+    box-shadow:
+      0 0 55px #e9c4ff,
+      0 0 130px #a25bff50;
+  }
 }
 
 button {
@@ -117,9 +152,13 @@ button {
   margin: 6px;
   font-size: 1rem;
   font-weight: 600;
+  font-family: inherit;
   background: #ffffff0c;
   cursor: pointer;
-  transition: transform .2s, box-shadow .2s, background .2s;
+  transition:
+    transform .2s,
+    box-shadow .2s,
+    background .2s;
 }
 
 button:hover {
@@ -128,10 +167,19 @@ button:hover {
   box-shadow: 0 0 22px #d98aff35;
 }
 
+button:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
 .primary {
   background: linear-gradient(110deg, #d44b9a, #8756d9);
   border: 0;
   box-shadow: 0 5px 25px #c34bbd30;
+}
+
+.primary:hover {
+  background: linear-gradient(110deg, #ed65b2, #9868ed);
 }
 
 .panel {
@@ -144,28 +192,62 @@ button:hover {
   box-shadow: 0 15px 50px #00000015;
 }
 
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
+
+#world {
+  animation: appear .8s ease both;
+}
 
 .note {
   padding: 22px 16px;
   border-radius: 18px;
   margin-top: 18px;
-  background: linear-gradient(135deg, #ff80bf15, #a78bfa15);
+  background: linear-gradient(
+    135deg,
+    #ff80bf15,
+    #a78bfa15
+  );
   border: 1px solid #ffb9e830;
   animation: appear .5s ease both;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  line-height: 1.85;
+  color: #f7eaff;
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.small { font-size: .85rem; color: #aa9bbf; }
+.small {
+  font-size: .85rem;
+  color: #aa9bbf;
+}
 
 footer {
   padding-top: 25px;
   color: #b6a4ce;
   font-size: .85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
@@ -174,17 +256,29 @@ footer {
 <div id="sky" aria-hidden="true"></div>
 
 <main>
-  <div class="eyebrow">A little something made with love</div>
+  <div class="eyebrow">
+    A little something made with love
+  </div>
 
   <div class="moon" aria-hidden="true"></div>
 
-  <h1>Welcome to<br>your universe, Sabrina ♡</h1>
+  <h1>
+    Welcome to<br>
+    your universe, Sabrina ♡
+  </h1>
 
   <p>
     Out of all the people in this enormous universe,
     there's one person I would always choose to find.
     That's you.
-    HAPPY BIRTHDAY!!
+  </p>
+
+  <h2>HAPPY BIRTHDAY!! 🎂❤️</h2>
+
+  <p>
+    Today is all about celebrating you, my girl.
+    I hope this little corner of the internet makes
+    you smile as much as you make me smile.
   </p>
 
   <button class="primary" onclick="enterWorld()">
@@ -192,67 +286,133 @@ footer {
   </button>
 
   <section id="world" class="hidden">
+
     <div class="panel">
       <div class="eyebrow">A message for you</div>
+
       <h2>Hey, my Princess BabyCheeks ❤️</h2>
+
       <p>
         I wanted to make something that's just for you.
         Something you can open whenever you want a little
         reminder that you're loved.
       </p>
+
       <p>
         This isn't just a website. It's a tiny piece of
         my heart, turned into a place you can visit.
+      </p>
+
+      <p>
+        Happy birthday, my princess. You deserve so much
+        happiness, love, and beautiful moments. I hope
+        this new chapter brings you reasons to smile
+        every single day. ❤️
       </p>
     </div>
 
     <div class="panel">
       <h2>Little doors to my heart 💌</h2>
-      <p>Pick a door, baby. There's something behind each one.</p>
 
-      <button onclick="openNote('miss')">When you miss me 🌙</button>
-      <button onclick="openNote('sad')">When it's a hard day 🫂</button>
-      <button onclick="openNote('love')">A little reminder 💗</button>
-       <button onclick="openNote('lovepoem')">A poem when you want to feel loved 💗</button>
-      <button onclick="openNote('drivers')">A message to you for your drivers test tomorrow!! 💗</button>
+      <p>
+        Pick a door, baby. There's something behind each one.
+      </p>
 
-      <div id="note" class="note hidden" aria-live="polite"></div>
+      <button onclick="openNote('miss')">
+        When you miss me 🌙
+      </button>
+
+      <button onclick="openNote('sad')">
+        When it's a hard day 🫂
+      </button>
+
+      <button onclick="openNote('love')">
+        A little reminder 💗
+      </button>
+
+      <button onclick="openNote('lovepoem')">
+        A poem to feel loved 🌹
+      </button>
+
+      <button onclick="openNote('drivers')">
+        Good luck with your driver's test 🚗
+      </button>
+
+      <div
+        id="note"
+        class="note hidden"
+        aria-live="polite"
+      ></div>
     </div>
 
     <div class="panel">
-      <div class="eyebrow">One of my favourite things</div>
+      <div class="eyebrow">
+        One of my favourite things
+      </div>
+
       <h2>Our little moments ☁️</h2>
+
       <p>
         Sometimes it's not about doing something huge.
         It's the little moments, the random conversations,
         the laughter, and the comfort of knowing you're there.
       </p>
+
       <p>
         Even an ordinary day feels different when I get
         to share a little piece of it with you.
+      </p>
+
+      <p>
+        Even when we're apart, I treasure the moments
+        we get to share. Some of my favourite memories
+        are made in the simplest ways, just by having you
+        in my life. ❤️
       </p>
     </div>
 
     <div class="panel">
       <h2>Three little promises ✨</h2>
-      <p>♡ I'll keep making an effort to show you that you matter.</p>
-      <p>♡ I'll keep finding little ways to make you smile.</p>
-      <p>♡ I'll keep looking forward to the memories we haven't made yet.</p>
+
+      <p>
+        ♡ I'll keep making an effort to show you that you matter.
+      </p>
+
+      <p>
+        ♡ I'll keep finding little ways to make you smile.
+      </p>
+
+      <p>
+        ♡ I'll keep looking forward to the memories we haven't made yet.
+      </p>
     </div>
 
     <div class="panel">
       <h2>There's one more thing...</h2>
-      <p>You've found your way through our little universe.</p>
+
+      <p>
+        You've found your way through our little universe.
+        But there's one last message waiting for you.
+      </p>
+
       <button class="primary" onclick="unlockSecret()">
         Open your final surprise 🔐
       </button>
-      <div id="secret" class="note hidden" aria-live="polite"></div>
+
+      <div
+        id="secret"
+        class="note hidden"
+        aria-live="polite"
+      ></div>
     </div>
 
     <footer>
       Made for Sabrina, with love ♡<br>
-      <span class="small">In a universe this big, I'm glad it's you.</span>
+      <span class="small">
+        In a universe this big, I'm glad it's you.
+      </span>
     </footer>
+
   </section>
 </main>
 
@@ -262,65 +422,175 @@ const sky = document.getElementById("sky");
 // Create a field of stars.
 for (let i = 0; i < 90; i++) {
   const star = document.createElement("span");
+
   star.className = "star";
   star.style.left = Math.random() * 100 + "%";
   star.style.top = Math.random() * 100 + "%";
   star.style.animationDelay = Math.random() * 4 + "s";
-  star.style.animationDuration = (2 + Math.random() * 4) + "s";
+  star.style.animationDuration =
+    (2 + Math.random() * 4) + "s";
+
   sky.appendChild(star);
 }
 
-// Send little hearts floating across the screen.
+// Floating hearts.
 function makeHeart() {
   const heart = document.createElement("span");
+
   heart.className = "heart";
-  heart.textContent = ["♡", "♥️", "✧", "❤️"][Math.floor(Math.random() * 4)];
+  heart.textContent = ["♡", "♥️", "✧", "❤️"][
+    Math.floor(Math.random() * 4)
+  ];
+
   heart.style.left = Math.random() * 100 + "%";
-  heart.style.fontSize = (14 + Math.random() * 22) + "px";
-  heart.style.animationDuration = (7 + Math.random() * 7) + "s";
+  heart.style.fontSize =
+    (14 + Math.random() * 22) + "px";
+
+  heart.style.animationDuration =
+    (7 + Math.random() * 7) + "s";
+
   sky.appendChild(heart);
+
   setTimeout(() => heart.remove(), 15000);
 }
 
 setInterval(makeHeart, 650);
 
+// Enter the website.
 function enterWorld() {
   const world = document.getElementById("world");
+
   world.classList.remove("hidden");
-  world.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  world.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
+// Personal messages.
 const notes = {
-  miss: "If you're missing me right now, imagine me giving you the biggest hug. Distance can't erase the little moments we've shared or the ones we still have waiting for us. ❤️",
-  sad: "You don't have to have everything figured out today. Take a breath, be kind to yourself, and remember that a difficult day doesn't define you. You deserve gentleness, too. 🫂",
-  love: "Just in case nobody has told you today: you matter. Your smile, your heart, your little quirks, and the person you are mean more to me than one website could ever explain. 💗",
-  lovepoem: "In the darkest of nights, you are always there to show me there is a light. With your kindess you show me everyday is a day to be better. When things get hard you never raise your voice.To me your love is the sweetest noise. Happy birthday my Bri. From the heart... Your G.",
-  drivers: "Hey, my Baba ❤️🥹I know you're doing your driver's tomorrow, and I just wanted to wish you the very best of luck, baby. I know you might be nervous, but I believe in you, and I hope you believe in yourself just as much.Take a deep breath, trust yourself, and remember that you don't have to be perfect. Just stay calm, focus, and do your best. No matter how tomorrow goes, I'm proud of you for getting out there and giving it a shot.I'm rooting for you all the way, my girl. And just imagine how happy I'm going to be when you tell me how it went. ❤️Now go show them what you've got, Baba. You've got this Babydriver! 🫶🏻🚗💗"
+  miss: `If you're missing me right now, imagine me giving
+you the biggest hug.
+
+Distance can't erase the little moments we've shared
+or the ones we still have waiting for us.
+
+No matter how far apart we are, you're someone
+I carry with me in my heart. ❤️`,
+
+  sad: `You don't have to have everything figured out today.
+
+Take a breath, be kind to yourself, and remember
+that a difficult day doesn't define you.
+
+You deserve gentleness, patience, and happiness, too.
+You don't always have to be strong, my girl.
+Give yourself the same kindness you give others. 🫂❤️`,
+
+  love: `Just in case nobody has told you today:
+
+You matter.
+
+Your smile, your heart, your little quirks, and the
+person you are mean more to me than one website
+could ever explain.
+
+Never forget how special you are to me, baby. 💗`,
+
+  lovepoem: `In the darkest of nights,
+you are always there to show me there is a light.
+
+With your kindness, you show me every day
+is a day to be better.
+
+When things get hard, you never raise your voice.
+To me, your love is the sweetest noise.
+
+Happy birthday, my Bri. ❤️
+
+From the heart...
+Your G. ♡`,
+
+  drivers: `Hey, my Baba ❤️🥹
+
+I know you're doing your driver's tomorrow, and I just
+wanted to wish you the very best of luck, baby.
+
+I know you might be nervous, but I believe in you,
+and I hope you believe in yourself just as much.
+
+Take a deep breath, trust yourself, and remember
+that you don't have to be perfect. Just stay calm,
+focus, and do your best.
+
+No matter how tomorrow goes, I'm proud of you
+for getting out there and giving it a shot.
+
+I'm rooting for you all the way, my girl.
+And just imagine how happy I'm going to be when
+you tell me how it went. ❤️
+
+Now go show them what you've got, Baba.
+You've got this, Babydriver! 🫶🏻🚗💗`
 };
 
+// Open a selected message.
 function openNote(type) {
   const note = document.getElementById("note");
+
+  if (!Object.prototype.hasOwnProperty.call(notes, type)) {
+    return;
+  }
+
   note.textContent = notes[type];
   note.classList.remove("hidden");
+
+  note.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
 }
 
+// Final surprise.
 function unlockSecret() {
   const secret = document.getElementById("secret");
+
   secret.innerHTML = `
     <h2>My favourite person. ♡</h2>
+
     <p>
       If I could give you one thing, it would be the ability
       to see yourself through my eyes, even for a moment.
     </p>
+
     <p>
       Maybe then you'd understand why you mean so much to me.
       Thank you for being you, Sabrina.
     </p>
-    <p style="font-size:1.4rem">I choose you. Always. ❤️</p>
+
+    <p>
+      Thank you for being part of my world and for giving
+      me so many reasons to smile.
+    </p>
+
+    <p style="font-size: 1.4rem">
+      I choose you. Always. ❤️
+    </p>
+
+    <p>
+      Happy birthday, my Princess BabyCheeks. 🎂💗
+    </p>
   `;
+
   secret.classList.remove("hidden");
-  secret.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  secret.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 }
 </script>
+
 </body>
 </html>
