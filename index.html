@@ -8,19 +8,14 @@
 <title>A Little Universe for Sabrina ♡</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   --pink: #ff80bf;
   --purple: #bb9cff;
-  --bg: #10091f;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -59,9 +54,7 @@ body {
 }
 
 @keyframes twinkle {
-  from {
-    opacity: .2;
-  }
+  from { opacity: .2; }
   to {
     opacity: 1;
     box-shadow: 0 0 9px white;
@@ -69,9 +62,7 @@ body {
 }
 
 @keyframes float-up {
-  10% {
-    opacity: .65;
-  }
+  10% { opacity: .65; }
   100% {
     transform: translateY(-115vh) rotate(25deg);
     opacity: 0;
@@ -99,20 +90,13 @@ h1 {
   line-height: 1.08;
   margin: 18px 0;
   letter-spacing: -2px;
-  background: linear-gradient(
-    120deg,
-    #fff,
-    #ff9dce,
-    #c4a8ff
-  );
+  background: linear-gradient(120deg, #fff, #ff9dce, #c4a8ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-h2 {
-  color: #ffc0e1;
-}
+h2 { color: #ffc0e1; }
 
 p {
   color: #d8cce9;
@@ -124,23 +108,14 @@ p {
   width: 115px;
   height: 115px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #fff,
-    #e5caff 45%,
-    #aa7ce7
-  );
-  box-shadow:
-    0 0 35px #d5a5ff80,
-    0 0 100px #a25bff30;
+  background: radial-gradient(circle at 35% 30%, #fff, #e5caff 45%, #aa7ce7);
+  box-shadow: 0 0 35px #d5a5ff80, 0 0 100px #a25bff30;
   animation: moon-glow 4s ease-in-out infinite alternate;
 }
 
 @keyframes moon-glow {
   to {
-    box-shadow:
-      0 0 55px #e9c4ff,
-      0 0 130px #a25bff50;
+    box-shadow: 0 0 55px #e9c4ff, 0 0 130px #a25bff50;
   }
 }
 
@@ -155,10 +130,7 @@ button {
   font-family: inherit;
   background: #ffffff0c;
   cursor: pointer;
-  transition:
-    transform .2s,
-    box-shadow .2s,
-    background .2s;
+  transition: transform .2s, box-shadow .2s, background .2s;
 }
 
 button:hover {
@@ -192,23 +164,15 @@ button:focus-visible {
   box-shadow: 0 15px 50px #00000015;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
-#world {
-  animation: appear .8s ease both;
-}
+#world { animation: appear .8s ease both; }
 
 .note {
   padding: 22px 16px;
   border-radius: 18px;
   margin-top: 18px;
-  background: linear-gradient(
-    135deg,
-    #ff80bf15,
-    #a78bfa15
-  );
+  background: linear-gradient(135deg, #ff80bf15, #a78bfa15);
   border: 1px solid #ffb9e830;
   animation: appear .5s ease both;
   white-space: pre-line;
@@ -218,14 +182,37 @@ button:focus-visible {
 }
 
 @keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sabrina's virtual bouquet 💐 */
+.bouquet {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  line-height: 1.6;
+  padding: 20px 8px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, #b95bbf30, transparent 70%),
+    #ffffff08;
+  border: 1px solid #ffb5e833;
+  margin-top: 20px;
+}
+
+.bouquet-flowers {
+  animation: bouquet-appear 1s ease both;
+  filter: drop-shadow(0 0 12px #ff80bf50);
+}
+
+.bouquet-message {
+  color: #ffc0e1;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+@keyframes bouquet-appear {
+  from { opacity: 0; transform: scale(.75) translateY(15px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .small {
@@ -240,9 +227,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
@@ -256,16 +241,11 @@ footer {
 <div id="sky" aria-hidden="true"></div>
 
 <main>
-  <div class="eyebrow">
-    A little something made with love
-  </div>
+  <div class="eyebrow">A little something made with love</div>
 
   <div class="moon" aria-hidden="true"></div>
 
-  <h1>
-    Welcome to<br>
-    your universe, Sabrina ♡
-  </h1>
+  <h1>Welcome to<br>your universe, Sabrina ♡</h1>
 
   <p>
     Out of all the people in this enormous universe,
@@ -289,7 +269,6 @@ footer {
 
     <div class="panel">
       <div class="eyebrow">A message for you</div>
-
       <h2>Hey, my Princess BabyCheeks ❤️</h2>
 
       <p>
@@ -311,45 +290,62 @@ footer {
       </p>
     </div>
 
+    <!-- VIRTUAL BOUQUET -->
     <div class="panel">
-      <h2>Little doors to my heart 💌</h2>
+      <div class="eyebrow">Picked just for you</div>
+      <h2>A bouquet for my princess 💐</h2>
 
       <p>
-        Pick a door, baby. There's something behind each one.
+        I wish I could hand you these flowers in person,
+        but until then, here's a little bouquet made just
+        for you, my Baba. ❤️
       </p>
 
-      <button onclick="openNote('miss')">
-        When you miss me 🌙
+      <button class="primary" onclick="revealBouquet()">
+        Open your flowers 💗
       </button>
 
-      <button onclick="openNote('sad')">
-        When it's a hard day 🫂
-      </button>
+      <div id="bouquet" class="bouquet hidden">
+        <div class="bouquet-flowers">
+          🌸 🌷 🌹<br>
+          💐 🌹 💐<br>
+          🌷 🌸 🌷<br>
+          🌿 💗 🌿
+        </div>
 
-      <button onclick="openNote('love')">
-        A little reminder 💗
-      </button>
+        <p class="bouquet-message">Happy Birthday, Sabrina ♡</p>
 
-      <button onclick="openNote('lovepoem')">
-        A poem to feel loved 🌹
-      </button>
+        <p>
+          If I could, I'd give you a thousand flowers
+          just to see you smile once. Every flower in
+          this bouquet is a little reminder of how
+          special you are to me.
+        </p>
 
-      <button onclick="openNote('drivers')">
-        Good luck with your driver's test 🚗
-      </button>
+        <p>
+          These flowers may be virtual, but the love
+          behind them is real. ❤️
+        </p>
 
-      <div
-        id="note"
-        class="note hidden"
-        aria-live="polite"
-      ></div>
+        <p>Forever your G. 🫶🏻</p>
+      </div>
     </div>
 
     <div class="panel">
-      <div class="eyebrow">
-        One of my favourite things
-      </div>
+      <h2>Little doors to my heart 💌</h2>
+      <p>Pick a door, baby. There's something behind each one.</p>
 
+      <button onclick="openNote('miss')">When you miss me 🌙</button>
+      <button onclick="openNote('sad')">When it's a hard day 🫂</button>
+      <button onclick="openNote('love')">A little reminder 💗</button>
+      <button onclick="openNote('lovepoem')">A poem to feel loved 🌹</button>
+      <button onclick="openNote('drivers')">Good luck with your driver's test 🚗</button>
+
+      <div id="note" class="note hidden" aria-live="polite"></div>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">One of my favourite things</div>
       <h2>Our little moments ☁️</h2>
 
       <p>
@@ -373,18 +369,9 @@ footer {
 
     <div class="panel">
       <h2>Three little promises ✨</h2>
-
-      <p>
-        ♡ I'll keep making an effort to show you that you matter.
-      </p>
-
-      <p>
-        ♡ I'll keep finding little ways to make you smile.
-      </p>
-
-      <p>
-        ♡ I'll keep looking forward to the memories we haven't made yet.
-      </p>
+      <p>♡ I'll keep making an effort to show you that you matter.</p>
+      <p>♡ I'll keep finding little ways to make you smile.</p>
+      <p>♡ I'll keep looking forward to the memories we haven't made yet.</p>
     </div>
 
     <div class="panel">
@@ -399,18 +386,12 @@ footer {
         Open your final surprise 🔐
       </button>
 
-      <div
-        id="secret"
-        class="note hidden"
-        aria-live="polite"
-      ></div>
+      <div id="secret" class="note hidden" aria-live="polite"></div>
     </div>
 
     <footer>
       Made for Sabrina, with love ♡<br>
-      <span class="small">
-        In a universe this big, I'm glad it's you.
-      </span>
+      <span class="small">In a universe this big, I'm glad it's you.</span>
     </footer>
 
   </section>
@@ -419,36 +400,27 @@ footer {
 <script>
 const sky = document.getElementById("sky");
 
-// Create a field of stars.
+// Create the stars.
 for (let i = 0; i < 90; i++) {
   const star = document.createElement("span");
-
   star.className = "star";
   star.style.left = Math.random() * 100 + "%";
   star.style.top = Math.random() * 100 + "%";
   star.style.animationDelay = Math.random() * 4 + "s";
-  star.style.animationDuration =
-    (2 + Math.random() * 4) + "s";
-
+  star.style.animationDuration = (2 + Math.random() * 4) + "s";
   sky.appendChild(star);
 }
 
 // Floating hearts.
 function makeHeart() {
   const heart = document.createElement("span");
-
   heart.className = "heart";
   heart.textContent = ["♡", "♥️", "✧", "❤️"][
     Math.floor(Math.random() * 4)
   ];
-
   heart.style.left = Math.random() * 100 + "%";
-  heart.style.fontSize =
-    (14 + Math.random() * 22) + "px";
-
-  heart.style.animationDuration =
-    (7 + Math.random() * 7) + "s";
-
+  heart.style.fontSize = (14 + Math.random() * 22) + "px";
+  heart.style.animationDuration = (7 + Math.random() * 7) + "s";
   sky.appendChild(heart);
 
   setTimeout(() => heart.remove(), 15000);
@@ -459,13 +431,23 @@ setInterval(makeHeart, 650);
 // Enter the website.
 function enterWorld() {
   const world = document.getElementById("world");
-
   world.classList.remove("hidden");
+  world.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-  world.scrollIntoView({
+// Reveal Sabrina's virtual bouquet.
+function revealBouquet() {
+  const bouquet = document.getElementById("bouquet");
+  bouquet.classList.remove("hidden");
+
+  bouquet.scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "center"
   });
+
+  for (let i = 0; i < 12; i++) {
+    setTimeout(makeHeart, i * 150);
+  }
 }
 
 // Personal messages.
@@ -535,7 +517,6 @@ Now go show them what you've got, Baba.
 You've got this, Babydriver! 🫶🏻🚗💗`
 };
 
-// Open a selected message.
 function openNote(type) {
   const note = document.getElementById("note");
 
@@ -545,11 +526,7 @@ function openNote(type) {
 
   note.textContent = notes[type];
   note.classList.remove("hidden");
-
-  note.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+  note.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 // Final surprise.
@@ -574,21 +551,13 @@ function unlockSecret() {
       me so many reasons to smile.
     </p>
 
-    <p style="font-size: 1.4rem">
-      I choose you. Always. ❤️
-    </p>
+    <p style="font-size: 1.4rem">I choose you. Always. ❤️</p>
 
-    <p>
-      Happy birthday, my Princess BabyCheeks. 🎂💗
-    </p>
+    <p>Happy birthday, my Princess BabyCheeks. 🎂💗</p>
   `;
 
   secret.classList.remove("hidden");
-
-  secret.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+  secret.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 </script>
 
